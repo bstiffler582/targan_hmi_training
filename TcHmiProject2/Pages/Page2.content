@@ -271,7 +271,7 @@
 </script>
 
 </div>
-<div id="TcHmiEllipse_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="702" data-tchmi-left-unit="px" data-tchmi-top="276" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px">
+<div id="TcHmiEllipse_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiEllipse" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="721" data-tchmi-left-unit="px" data-tchmi-top="216" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px">
 
 <script data-tchmi-target-attribute="data-tchmi-fill-color" type="application/json">
 {
