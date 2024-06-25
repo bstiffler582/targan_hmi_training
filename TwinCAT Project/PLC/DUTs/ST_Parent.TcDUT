@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_Parent" Id="{4eda03c3-83f5-4e56-8ea8-292c743c20ed}">
+    <Declaration><![CDATA[TYPE ST_Parent :
+STRUCT
+	stInner		: DUT_ServoRecipe;
+	iMember		: DINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

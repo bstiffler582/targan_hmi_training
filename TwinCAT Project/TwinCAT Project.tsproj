@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.56">
+	<Translations>
+		<Text TxtId="Alarm_1">
+			<Text LcId="7"><![CDATA[Meine First Alarmisch Text]]></Text>
+			<Text LcId="1033"><![CDATA[My First Alarm Text!]]></Text>
+		</Text>
+	</Translations>
+	<DataTypes>
+		<DataType>
+			<Name GUID="{42000D25-C5F8-73CD-7666-2CBA5DDC0ED0}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..9] OF LREAL</Name>
+			<BitSize>640</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>10</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{CAFB0E0D-AC80-41E7-B27F-5335F9826088}" PersistentType="true">NewEventClass</Name>
+			<DisplayName TxtId=""><![CDATA[NewEventClass_DisplayText]]></DisplayName>
+			<BitSize>0</BitSize>
+			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
+			<Hides>
+				<Hide GUID="{6DEBE4E0-D48E-4FA6-AAB6-0CBAF67D7E02}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{EA094DE9-5613-4D0E-8844-7EA3356CF972}" PersistentType="true">Alarms</Name>
+			<DisplayName TxtId=""><![CDATA[EventLogger Alarms]]></DisplayName>
+			<EventId>
+				<Name Id="1">MyFirstAlarm</Name>
+				<DisplayName TxtId=""><![CDATA[Alarm_1]]></DisplayName>
+				<Comment TxtId=""><![CDATA[Some comment. Arg {0}]]></Comment>
+				<DescriptionText TxtId=""><![CDATA[Some description text {0}]]></DescriptionText>
+				<DescriptionUrl TxtId=""><![CDATA[/Imports/beckhoff_indusoft.pdf]]></DescriptionUrl>
+				<Severity>Error</Severity>
+				<CauseRemedy Idx="1">
+					<Cause TxtId=""><![CDATA[Fat chicken]]></Cause>
+					<Remedy TxtId=""><![CDATA[Diet]]></Remedy>
+				</CauseRemedy>
+				<Properties>
+					<Property>
+						<Name>someProp</Name>
+						<Value>10</Value>
+						<Desc><![CDATA[I dunno, lol]]></Desc>
+					</Property>
+				</Properties>
+			</EventId>
+			<Hides>
+				<Hide GUID="{F0756DC5-881D-4326-8707-F653D5E314B9}"/>
+				<Hide GUID="{A7175415-7F6D-4C2F-B64B-741280B71435}"/>
+				<Hide GUID="{B754F545-454D-4122-97F3-C2251131FACE}"/>
+				<Hide GUID="{D79D4450-BE13-4455-944B-610DD1B71C49}"/>
+				<Hide GUID="{8DA9F363-BE87-4D41-AD36-7B58A56CEB09}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+	<Project ProjectGUID="{25713AD8-71F3-4125-BE9C-E90537971A45}" Target64Bit="true" ShowHideConfigurations="#x6">
+		<System>
+			<Settings MaxCpus="12" NonWinCpus="1">
+				<Cpu CpuId="11"/>
+			</Settings>
+			<Licenses>
+				<Target>
+					<ManualSelect>{133B41A5-2827-4423-8FEB-78AF4E0C890F}</ManualSelect>
+					<ManualSelect>{EE499E71-9522-4C05-86B4-8AD0F904E0C4}</ManualSelect>
+					<ManualSelect>{21C146FF-61EE-4911-969B-61339FE7DB69}</ManualSelect>
+				</Target>
+			</Licenses>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{F70EAEE0-A6DF-4565-BF25-8450AF6CBE13}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{97C79FE2-A3AF-4E6C-D306-121630CB8187}">
+					<Name>PLC Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>MAIN.fTrend</Name>
+							<Type GUID="{42000D25-C5F8-73CD-7666-2CBA5DDC0ED0}">ARRAY [0..9] OF LREAL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.iTest1</Name>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.iTest2</Name>
+							<Type>DINT</Type>
+						</Var>
+					</Vars>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Analytics>
+			<Name>ANALYTICS</Name>
+			<ImageId>281</ImageId>
+			<Symbols>
+				<Symbol>PlcTask Outputs.MAIN.fTrend</Symbol>
+				<Symbol>PlcTask Outputs.MAIN.iTest1</Symbol>
+				<Symbol>PlcTask Outputs.MAIN.iTest2</Symbol>
+			</Symbols>
+			<AddiStreamDescription>
+				<Address></Address>
+				<Longitude></Longitude>
+				<Latitude></Latitude>
+			</AddiStreamDescription>
+			<SystemAlias></SystemAlias>
+			<DataLogger GUID="{B91F0052-7519-EA3B-0408-F4EF6DE277DA}">
+				<Name>Data Logger 1</Name>
+				<Name>Data Logger 1</Name>
+				<ParameterValues>
+					<Value>
+						<Name>Data Format</Name>
+						<EnumText>ANALYTICS_FORMAT_FILE</EnumText>
+					</Value>
+					<Value>
+						<Name>Data Compression</Name>
+						<EnumText>ANALYTICS_COMPRESSION_RL</EnumText>
+					</Value>
+					<Value>
+						<Name>Max. Compression Compare Width</Name>
+						<EnumText>ANALYTICS_COMP_WIDTH_8</EnumText>
+					</Value>
+					<Value>
+						<Name>MQTT Host Name</Name>
+						<String>127.0.0.1</String>
+					</Value>
+					<Value>
+						<Name>MQTT Tcp Port</Name>
+						<Value>1883</Value>
+					</Value>
+					<Value>
+						<Name>MQTT Main Topic</Name>
+						<String>DefaultMainTopic</String>
+					</Value>
+					<Value>
+						<Name>MQTT Client ID</Name>
+						<String></String>
+					</Value>
+					<Value>
+						<Name>MQTT User Name</Name>
+						<String></String>
+					</Value>
+					<Value>
+						<Name>MQTT Password</Name>
+						<String></String>
+					</Value>
+				</ParameterValues>
+				<Stream Caller="#x08502001" Adi="#x08502000" Id="#x02040001" CntAds="#x00000020" CntFile="#x00000010" CntRing="#x00000002" SamplingDivider="1">
+					<Name>PLC.PLC Instance.PlcTask</Name>
+					<DisplayName>PlcStream1</DisplayName>
+					<FileDir>%TC_BOOTPRJPATH%</FileDir>
+				</Stream>
+			</DataLogger>
+		</Analytics>
+	</Project>
+</TcSmProject>

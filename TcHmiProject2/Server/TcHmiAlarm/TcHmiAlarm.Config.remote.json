@@ -1,0 +1,24 @@
+{
+    "alarmSymbols": {
+        "PLC1.MAIN.iTest1": {
+            "alarmSettings": {
+                "MyTestAlarm": {
+                    "alarmTextKey": "testAlarm",
+                    "condition": [
+                        {
+                            "comparator": ">",
+                            "path": "",
+                            "value": 95.0
+                        }
+                    ],
+                    "enabled": true,
+                    "notificationType": 2,
+                    "severity": 3
+                }
+            },
+            "enabled": true,
+            "interval": "PT1S",
+            "onError": false
+        }
+    }
+}

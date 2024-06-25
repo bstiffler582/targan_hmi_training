@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="DUT_DriveData_HMI" Id="{e2399093-18b1-4be3-b377-c4ae4df5f364}">
+    <Declaration><![CDATA[TYPE DUT_DriveData_HMI :
+STRUCT
+	iHMI_Signal				: INT;
+	iMotorSpeed_RPM			: INT;
+	rMotorCurrent_Amps		: REAL;
+	rMotorTorque_Pcnt		: REAL;
+	strDriveError			: STRING(50);
+	wDriveFaultCode			: WORD;
+	xDriveCommsOk			: BOOL;
+	xDriveFault				: BOOL;
+	xDriveModeJog			: BOOL;
+	xDriveRunning			: BOOL;
+	xDriveStopped			: BOOL;
+	xDriveAtReference		: BOOL;
+	xPB_Jog					: BOOL;
+	xPB_Reset				: BOOL;
+	xInExecute				: BOOL;
+	xInManualControlMode	: BOOL;
+	xHasManualRunCommand	: BOOL;
+	xManualOpSpeedSelected	: BOOL;
+	xManualJogSpeedSelected : BOOL;
+	rSpeedSetpointOp_Ips	: REFERENCE TO REAL;
+	rSpeedSetpointJog_Ips	: REFERENCE TO REAL;	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

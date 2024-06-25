@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "UC_Cylinder": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\UC_Cylinder.usercontrol.json",
+      "id": "tchmi:project#/definitions/UC_Cylinder",
+      "type": "object"
+    },
+    "UC_Drive": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\UC_Drive.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UC_Drive"
+    },
+    "UC_Drive_-_Copy": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\UC_Drive_NoStruct.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UC_Drive_-_Copy"
+    },
+    "UC_Drive_NoStruct": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "TcHmi.Controls.System.TcHmiUserControl",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControls\\UC_Drive_NoStruct.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UC_Drive_NoStruct"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{093d2a50-53a9-4795-9c9f-dd6b3096610f}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	stTest			: ST_Parent;
+	arrCylinders	: ARRAY[0..9] OF ST_Cylinder;
+	arrAlarms		: ARRAY[0..31] OF ST_Alarm;
+	
+	DriveData1		: DUT_DriveData_HMI;
+	DriveData2		: DUT_DriveData_HMI;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
